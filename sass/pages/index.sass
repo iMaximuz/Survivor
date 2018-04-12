@@ -62,6 +62,8 @@ body
     -moz-transition: all 0.3s
     transition: all 0.3s
 
+    z-index: 1;
+
     &::after
         content: '';
         position: absolute;
@@ -89,7 +91,7 @@ body
         transform: translateX(-50%) translateY(-50%)
 
     &:hover, &:active
-        color: #0e83cd
+        color: $dark
     &:hover
         &::after
             width: 90%
@@ -115,7 +117,7 @@ body
         transform: translateX(-50%) translateY(-50%) rotate(45deg);
 
     &:hover, &:active
-        color: #0e83cd
+        color: $dark
     &:hover
         &::after
             height: 260%;
@@ -141,7 +143,7 @@ body
         transform: translateX(-50%) translateY(-50%);
 
     &:hover, &:active
-        color: #0e83cd
+        color: $dark
     &:hover
         &::after
             height: 75%;
@@ -155,27 +157,68 @@ body
 
 
 
+
 .modal 
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
 
+    &.show
+        display: block
 
     /* Modal Content/Box */
     .modal-content 
         background-color: #fefefe;
-        margin: 15% auto; /* 15% from the top and centered */
-        padding: 20px;
-        border: 1px solid #888;
-        width: 80%; /* Could be more or less, depending on screen size */
+        margin: 15% auto; 
+        //padding: 20px;
+        //border: 3px solid #fff
+        width: 80%; 
 
+        .modal-header 
+            padding: 2px 16px;
+            background-color: $darker;
+            color: white;
+        
+        /* Modal Body */
+        .modal-body 
+            background-color: $dark
+            padding: 2px 16px
+
+        /* Modal Footer */
+        .modal-footer 
+            padding: 2px 16px;
+            background-color: $dark;
+            color: white;
+        
+
+        /* Modal Content */
+        .modal-content 
+            position: relative;
+            background-color: #fefefe;
+            margin: auto;
+            padding: 0;
+            border: 1px solid #888;
+            width: 80%;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+            animation-name: animatetop;
+            animation-duration: 0.4s
+        
+
+        /* Add Animation */
+        @keyframes animatetop 
+            from 
+                top: -300px 
+                opacity: 0
+            to 
+                top: 0
+                opacity: 1
 
     /* The Close Button */
     .close 
@@ -184,9 +227,46 @@ body
         font-size: 28px;
         font-weight: bold;
 
-        &:hover,
-        &:focus 
+        &:hover, &:focus 
             color: black;
             text-decoration: none;
             cursor: pointer;
 
+
+.slider 
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 25px; /* Specified height */
+    background: $light; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+
+    /* Mouse-over effects */
+    &:hover 
+        opacity: 1; /* Fully shown on mouse-over */
+    
+
+    /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */ 
+    &::-webkit-slider-thumb 
+        -webkit-appearance: none; /* Override default look */
+        appearance: none;
+        width: 25px; /* Set a specific slider handle width */
+        height: 25px; /* Slider handle height */
+        background: $darker; /* Green background */
+        cursor: pointer; /* Cursor on hover */
+    
+
+    &::-moz-range-thumb 
+        width: 25px; /* Set a specific slider handle width */
+        height: 25px; /* Slider handle height */
+        background: $darker; /* Green background */
+        cursor: pointer; /* Cursor on hover */
+
+.highscores-container
+    text-align: center
+
+#highscores
+     list-style-type: none;

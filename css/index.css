@@ -71,6 +71,7 @@ body {
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   transition: all 0.3s;
+  z-index: 1;
 }
 
 .btn::after {
@@ -105,7 +106,7 @@ body {
 }
 
 .btn-1d:hover, .btn-1d:active {
-  color: #0e83cd;
+  color: #1b2331;
 }
 
 .btn-1d:hover::after {
@@ -136,7 +137,7 @@ body {
 }
 
 .btn-1e:hover, .btn-1e:active {
-  color: #0e83cd;
+  color: #1b2331;
 }
 
 .btn-1e:hover::after {
@@ -167,7 +168,7 @@ body {
 }
 
 .btn-1f:hover, .btn-1f:active {
-  color: #0e83cd;
+  color: #1b2331;
 }
 
 .btn-1f:hover::after {
@@ -182,35 +183,71 @@ body {
 
 .modal {
   display: none;
-  /* Hidden by default */
   position: fixed;
-  /* Stay in place */
   z-index: 1;
-  /* Sit on top */
   left: 0;
   top: 0;
   width: 100%;
-  /* Full width */
   height: 100%;
-  /* Full height */
   overflow: auto;
-  /* Enable scroll if needed */
   background-color: black;
-  /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4);
-  /* Black w/ opacity */
   /* Modal Content/Box */
   /* The Close Button */
+}
+
+.modal.show {
+  display: block;
 }
 
 .modal .modal-content {
   background-color: #fefefe;
   margin: 15% auto;
-  /* 15% from the top and centered */
-  padding: 20px;
+  width: 80%;
+  /* Modal Body */
+  /* Modal Footer */
+  /* Modal Content */
+  /* Add Animation */
+}
+
+.modal .modal-content .modal-header {
+  padding: 2px 16px;
+  background-color: #121921;
+  color: white;
+}
+
+.modal .modal-content .modal-body {
+  background-color: #1b2331;
+  padding: 2px 16px;
+}
+
+.modal .modal-content .modal-footer {
+  padding: 2px 16px;
+  background-color: #1b2331;
+  color: white;
+}
+
+.modal .modal-content .modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
   border: 1px solid #888;
   width: 80%;
-  /* Could be more or less, depending on screen size */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
 }
 
 .modal .close {
@@ -224,5 +261,64 @@ body {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+.slider {
+  -webkit-appearance: none;
+  /* Override default CSS styles */
+  appearance: none;
+  width: 100%;
+  /* Full-width */
+  height: 25px;
+  /* Specified height */
+  background: #ffffff;
+  /* Grey background */
+  outline: none;
+  /* Remove outline */
+  opacity: 0.7;
+  /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s;
+  /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+  /* Mouse-over effects */
+  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+}
+
+.slider:hover {
+  opacity: 1;
+  /* Fully shown on mouse-over */
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  /* Override default look */
+  appearance: none;
+  width: 25px;
+  /* Set a specific slider handle width */
+  height: 25px;
+  /* Slider handle height */
+  background: #121921;
+  /* Green background */
+  cursor: pointer;
+  /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  /* Set a specific slider handle width */
+  height: 25px;
+  /* Slider handle height */
+  background: #121921;
+  /* Green background */
+  cursor: pointer;
+  /* Cursor on hover */
+}
+
+.highscores-container {
+  text-align: center;
+}
+
+#highscores {
+  list-style-type: none;
 }
 /*# sourceMappingURL=index.css.map */

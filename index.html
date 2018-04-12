@@ -24,11 +24,57 @@
 
         <!-- Modal content -->
         <div class="modal-content">
-            <span class="close">&times;</span>
-            <p>Some text in the Modal..</p>
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Settings</h2>
+            </div>
+            <div class="modal-body">
+                <div>Music: <input type="range" min="1" max="100" value="50" class="slider" id="myRange"></div>
+                <div>Sound Effects: <input type="range" min="1" max="100" value="50" class="slider" id="myRange"></div>
+            </div>
         </div>
     
     </div>
+
+    <div id="highscoresModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>High Scores</h2>
+            </div>
+            <div class="modal-body">
+                <div class="highscores-container">
+                    <ul id="highscores">
+                        <li>Max:--------------------99999</li>
+                        <li>Player2:-----------------54555</li>
+                        <li>Player3:------------------1234</li>
+                        <li>Player4:-------------------421</li>
+                        <li>Player5:--------------------94</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+
+    <div id="pauseModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Pause</h2>
+                </div>
+                <div class="modal-body">
+                    <a href="#" id="settings" class="btn btn-1 btn-1f">Resume</a><br>
+                    <a href="#" id="settings" class="btn btn-1 btn-1f">Settings</a><br>
+                    <a href="#" id="settings" class="btn btn-1 btn-1f">Exit</a><br>
+                </div>
+            </div>
+        
+        </div>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/index.js"></script>
