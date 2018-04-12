@@ -1,0 +1,228 @@
+@font-face {
+  font-family: 'MuseoSans_500local';
+  src: url("MuseoSans_500-webfont.woff2") format("woff2"), url("MuseoSans_500-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'MuseoSans_500local';
+  background: #ffffff;
+  /* Old browsers */
+  background: -moz-radial-gradient(center, ellipse cover, #1b2331 40%, #121921 150%);
+  background: -webkit-radial-gradient(center, ellipse cover, #1b2331 40%, #121921 150%);
+  background: radial-gradient(ellipse at center, #1b2331 40%, #121921 150%);
+  color: #ffffff;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.wrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+#title {
+  font-family: 'MuseoSans_500local';
+  vertical-align: middle;
+}
+
+#title > div {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 8em;
+  color: rgba(125, 125, 125, 0.5);
+}
+
+#title > h1 {
+  font-family: 'MuseoSans_500local';
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 4em;
+}
+
+.btn {
+  text-decoration: none;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+  padding: 15px 60px;
+  display: inline-block;
+  margin: 15px 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  outline: none;
+  position: relative;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.btn-1 {
+  border: 3px solid #fff;
+  color: #fff;
+}
+
+.btn-1d {
+  overflow: hidden;
+}
+
+.btn-1d::after {
+  width: 0;
+  height: 103%;
+  top: 50%;
+  left: 50%;
+  background: #fff;
+  opacity: 0;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.btn-1d:hover, .btn-1d:active {
+  color: #0e83cd;
+}
+
+.btn-1d:hover::after {
+  width: 90%;
+  opacity: 1;
+}
+
+.btn-1d:active::after {
+  width: 101%;
+  opacity: 1;
+}
+
+.btn-1e {
+  overflow: hidden;
+}
+
+.btn-1e::after {
+  width: 100%;
+  height: 0;
+  top: 50%;
+  left: 50%;
+  background: #fff;
+  opacity: 0;
+  -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  -moz-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  -ms-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  transform: translateX(-50%) translateY(-50%) rotate(45deg);
+}
+
+.btn-1e:hover, .btn-1e:active {
+  color: #0e83cd;
+}
+
+.btn-1e:hover::after {
+  height: 260%;
+  opacity: 1;
+}
+
+.btn-1e:active::after {
+  height: 450%;
+  opacity: 1;
+}
+
+.btn-1f {
+  overflow: hidden;
+}
+
+.btn-1f::after {
+  width: 101%;
+  height: 0;
+  top: 50%;
+  left: 50%;
+  background: #fff;
+  opacity: 0;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.btn-1f:hover, .btn-1f:active {
+  color: #0e83cd;
+}
+
+.btn-1f:hover::after {
+  height: 75%;
+  opacity: 1;
+}
+
+.btn-1f:active::after {
+  height: 130%;
+  opacity: 1;
+}
+
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+  /* Modal Content/Box */
+  /* The Close Button */
+}
+
+.modal .modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  /* Could be more or less, depending on screen size */
+}
+
+.modal .close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.modal .close:hover, .modal .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+/*# sourceMappingURL=index.css.map */
